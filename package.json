@@ -1,0 +1,26 @@
+{
+  "name": "weatherapp",
+  "version": "1.0.0",
+  "description": "This is a Weather App Made by using Fetch API to make Asynchronous Call to OpenWeatherAPI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.stackroute.in/shikhas/myweatherapp.git"
+  },
+  "keywords": [
+    "HTML5",
+    "CSS3",
+    "JavaScript",
+    "BootStrap5",
+    "Fetch",
+    "API"
+  ],
+  "author": "Shikha Singh",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "5.3"
+  }
+}

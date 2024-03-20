@@ -1,0 +1,17 @@
+h1 {
+    margin: 0;
+    font-family: "Mohave", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.bgcolor {
+    background-color: lightslategray;
+    color: bisque;
+}
+
+.hide {
+    /* background-color: aqua; */
+    display: none;
+}

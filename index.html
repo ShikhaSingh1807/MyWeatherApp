@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Weather App">
+    <meta name="keywords" content="HTML5, CSS3, JavaScript,BootStrap5,Fetch API">
+    <meta name="author" content="Shikha Singh">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="./images/favicon-16x16.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lekton:ital,wght@0,400;0,700;1,400&family=Mohave:ital,wght@0,300..700;1,300..700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="container alert alert-success">
+        <h1 class="text-center">Weather Search App</h1>
+    </header>
+
+    <main>
+        <!-- This section contain the form where user can enter city name -->
+        <section class="container bgcolor">
+            <form onsubmit="validateCity(event)">
+                <div class="mb-3">
+                    <label for="cityname" class="form-label">City Name</label>
+                    <input type="text" class="form-control" id="cityname" placeholder="Enter City Name">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </section>
+        <!-- This section will contain the weather info once the user has entered the valid city name -->
+        <section class=" container hide mt-3 alert alert-warning" id="showWeather">
+            <h1 class="text-center" id="head"></h1>
+            <h5 class="text-center" id="description"></h5>
+            <h5 class="text-center" id="temperature"> </h5>
+            <h5 class="text-center" id="humidity"></h5>
+            <h5 class="text-center" id="pressure"></h5>
+            <h5 class="text-center" id="windspeed"></h5>
+        </section>
+    </main>
+
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
