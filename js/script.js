@@ -30,19 +30,33 @@ function getWeatherReport(city) {
 
     }).then((resp) => {
         console.log(resp);
-        document.getElementById('showWeather').style.display = "block";
-        let headContent = document.getElementById('head');
-        headContent.innerHTML = `Weather in ${city} , India`;
-        let description = document.getElementById('description');
-        description.innerHTML = `Description : ${resp.weather[0].description} `;
-        let temperature = document.getElementById('temperature');
-        temperature.innerHTML = `Temperature :${Math.round(resp.main.temp)}&deg;C  `;
-        let humidity = document.getElementById('humidity');
-        humidity.innerHTML = `Humidity :${resp.main.humidity} %  `;
-        let pressure = document.getElementById('pressure');
-        pressure.innerHTML = `Air Pressure :${resp.main.pressure} mb  `;
-        let windspeed = document.getElementById('windspeed');
-        windspeed.innerHTML = `Wind Speed :${resp.wind.speed}  KMPH  `;
+        // console.log(resp.message);
+        // console.log(resp.cod);
+
+        // This is error section in case we get 404 , city not found error
+        if (resp.cod == 404) {
+            console.log('Inside if clause');
+            document.getElementById('showWeather').style.display = "none";
+            document.getElementById('errorsection').style.display = "block";
+            let err = document.getElementById('errorMessage');
+            err.innerHTML = resp.message;;
+        }
+        //If city exist
+        else {
+            document.getElementById('showWeather').style.display = "block";
+            let headContent = document.getElementById('head');
+            headContent.innerHTML = `Weather in ${city} , India`;
+            let description = document.getElementById('description');
+            description.innerHTML = `Description : ${resp.weather[0].description} `;
+            let temperature = document.getElementById('temperature');
+            temperature.innerHTML = `Temperature :${Math.round(resp.main.temp)}&deg;C  `;
+            let humidity = document.getElementById('humidity');
+            humidity.innerHTML = `Humidity :${resp.main.humidity} %  `;
+            let pressure = document.getElementById('pressure');
+            pressure.innerHTML = `Air Pressure :${resp.main.pressure} mb  `;
+            let windspeed = document.getElementById('windspeed');
+            windspeed.innerHTML = `Wind Speed :${resp.wind.speed}  KMPH  `;
+        }
     });
 }
 
